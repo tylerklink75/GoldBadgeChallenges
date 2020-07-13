@@ -11,9 +11,11 @@ namespace _01_Cafe
 {
     public class ProgramUI
     {
-        private MenuRepo _menuRepo = new MenuRepo();
+         MenuRepo _menuRepo = new MenuRepo();
+        List<Menu> _menuItems;
         public void Run()
         {
+            _menuItems = _menuRepo.GetMenuList();
             RunMenu();
         }
         private void RunMenu()

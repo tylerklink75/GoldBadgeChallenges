@@ -8,7 +8,9 @@ namespace CafeMenu
 {
    public class MenuRepo
     {
-        List<Menu> _menuList = new List<Menu>();
+       private List<Menu> _menuList = new List<Menu>();
+   
+
         public List <Menu> GetMenuList()
         {
             return _menuList;
