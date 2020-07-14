@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0AF4E6A0-68B8-4379-B55A-2EFC3188213D}</ProjectGuid>
+    <ProjectGuid>{1A8DF7FD-E354-4F21-AC2C-D6CCF23C0C78}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_02_KClaims</RootNamespace>
-    <AssemblyName>02_KClaims</AssemblyName>
+    <RootNamespace>_03_Badges</RootNamespace>
+    <AssemblyName>03_Badges</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="badge.cs" />
+    <Compile Include="BadgeRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgramUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

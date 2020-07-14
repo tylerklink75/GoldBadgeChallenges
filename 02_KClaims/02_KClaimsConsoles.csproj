@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5B2916A0-1FAC-4D93-9570-837E451ACE9E}</ProjectGuid>
+    <ProjectGuid>{0AF4E6A0-68B8-4379-B55A-2EFC3188213D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_01_Cafe</RootNamespace>
-    <AssemblyName>01_Cafe</AssemblyName>
+    <RootNamespace>_02_KClaims</RootNamespace>
+    <AssemblyName>02_KClaims</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -51,9 +51,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CafeMenu\01_CafeClasses.csproj">
-      <Project>{6A5D9C68-2FAC-444D-B25F-5F56649CB7C8}</Project>
-      <Name>01_CafeClasses</Name>
+    <ProjectReference Include="..\02_Claims\02_ClaimsClasses.csproj">
+      <Project>{98679F84-8161-4957-A3BF-888D13CDBDD4}</Project>
+      <Name>02_ClaimsClasses</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace _02_Claims
 {
-    public enum ClaimType { Car=1, Home, Theft }
-    public class Claims
+    public enum ClaimType { Car=1, Home, Theft, Other}
+    public class Claim
     {
         public int ClaimID { get; set; }
         public ClaimType TypeofClaim { get; set; }
@@ -28,8 +28,8 @@ namespace _02_Claims
                 return false;
             }
         }
-        public Claims() { }
-        public Claims(int claimID, ClaimType typeOfClaim, string description, double claimAmount, DateTime dateOfIncident, DateTime dateOfClaim)
+        public Claim() { }
+        public Claim(int claimID, ClaimType typeOfClaim, string description, double claimAmount, DateTime dateOfIncident, DateTime dateOfClaim)
         {
             ClaimID = claimID;
             TypeofClaim = typeOfClaim;

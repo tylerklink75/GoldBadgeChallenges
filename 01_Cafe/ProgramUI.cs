@@ -11,14 +11,15 @@ namespace _01_Cafe
 {
     public class ProgramUI
     {
-         MenuRepo _menuRepo = new MenuRepo();
-        List<Menu> _menuItems;
+        private MenuRepo _menuRepo = new MenuRepo();
+       
         public void Run()
         {
-            _menuItems = _menuRepo.GetMenuList();
+            SeedContentList();
             RunMenu();
+            
         }
-        private void RunMenu()
+        public void RunMenu()
         {
             bool keepMenuOpen = true;
             while (keepMenuOpen)
@@ -51,7 +52,7 @@ namespace _01_Cafe
                 
             }
         }
-        private  void CreateMenuItem()
+        public  void CreateMenuItem()
         {
             Console.Clear();
             Menu newEntree = new Menu();
@@ -70,7 +71,7 @@ namespace _01_Cafe
 
             
         }
-        private void DisplayMenu()
+        public void DisplayMenu()
         {
             Console.Clear();
             List<Menu> menu = _menuRepo.GetMenuList();
@@ -82,18 +83,20 @@ namespace _01_Cafe
                   $"Ingredients {items.Ingredients} \n"+
                   $"Price {items.Price} \n");
             }
+            Console.WriteLine("press enter to continue");
+            Console.ReadLine();
         }
 
-        private void RemoveItem()
+        public void RemoveItem()
         {
             Console.Clear();
 
            List<Menu> menu = _menuRepo.GetMenuList();
             Console.WriteLine("please enter the number for the entree that you would like to take off of the menu, must not have been one of your best sellers.");
-            int userInput = int.Parse(Console.ReadLine());
+            int Input = int.Parse(Console.ReadLine());
             foreach(Menu item in menu)
             {
-                if(item.Number == userInput)
+                if(item.Number == Input)
                 {
                     _menuRepo.RemoveItem(item);
                     break;
@@ -102,7 +105,20 @@ namespace _01_Cafe
             Console.WriteLine("must not have been a best seller");
 
         }
+        private void SeedContentList()
+        {
+            var OneItem = new Menu("Cheeseburger", 2, "the best and most greasy cheeseburger in the state of indiana", "jalapenos,beef,cheedar cheese,ketchup", 7.25m);
+            var TwoItem = new Menu("spicy tots", 3, "everything you can imagine on tater tots", "tots, chicken, cheese, bacon", 8.35m);
+            var ThreeItem = new Menu("smokin hot chicken", 4, "chicken smothered in hot sauce", "chicken,hotsauce, and ranch,", 9.25m);
+            _menuRepo.AddItem(OneItem);
+            _menuRepo.AddItem(TwoItem);
+            _menuRepo.AddItem(ThreeItem);
+
+        }
+
 
     }
     
+
+
 }

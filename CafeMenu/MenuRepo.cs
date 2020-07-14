@@ -21,6 +21,7 @@ namespace CafeMenu
         }
         public void RemoveItem(Menu items)
         {
+            
             _menuList.Remove(items);
         }
 
