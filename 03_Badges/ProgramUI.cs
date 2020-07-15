@@ -51,6 +51,10 @@ namespace _03_Badges
             }
 
         }
+        public void AddBadge()
+        {
+            Console.Clear();
+        }
 
 
         public void SeedContent()

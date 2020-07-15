@@ -28,9 +28,10 @@ namespace _02_Claims
             return _queueofClaims.Peek();
         }
         //also want to be able to delete the claim when done with it
-        public void RemoveClaim()
+        public Queue<Claim> RemoveItem()
         {
             _queueofClaims.Dequeue();
+            return _queueofClaims;
         }
     }
 }

@@ -24,10 +24,10 @@ namespace _03_BadgesUnitTest
         [TestMethod]
         public void BadgeRepository_ShouldIncrease()
         {
-            _do
+
+
+
+
         }
-   
-        
-        
     }
 }

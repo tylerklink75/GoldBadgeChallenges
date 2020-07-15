@@ -80,7 +80,7 @@ namespace _02_KClaims
             switch (userInput)
             {
                 case "y":
-                    _repo.RemoveClaim();
+                    _repo.RemoveItem();
                     break;
                 case "n":
 
