@@ -91,12 +91,7 @@ namespace _02_KClaims
                     {
                         break;
                     }
-
-                    
-                
-
-                            
-                    
+                                   
             }
         }
 
@@ -119,7 +114,6 @@ namespace _02_KClaims
             Console.ReadLine();
             }
         
-
             public void AddNewClaim()
         {
             Console.Clear();
@@ -143,10 +137,6 @@ namespace _02_KClaims
             _repo.addNewClaim(newClaim);
             Console.WriteLine("please make sure that you have entered all the information correctly, when you are finished you can press enter to return to the main screen");
             Console.ReadLine();
-
-
-
-
 
         }
         
