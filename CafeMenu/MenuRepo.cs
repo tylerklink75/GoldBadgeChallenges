@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace CafeMenu
 {
+    //CRUD
+    //create
+    //read
+    //update
+    //delete
    public class MenuRepo
     {
        private List<Menu> _menuList = new List<Menu>();

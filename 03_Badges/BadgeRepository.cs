@@ -11,32 +11,41 @@ namespace _03_Badges
     //remove a badge access
     //give access to the badge id and door
 
-   public class BadgeRepository
+    public class BadgeRepository
     {
         private Dictionary<int, List<string>> _doorAccess = new Dictionary<int, List<string>>();
         public Dictionary<int, List<string>> GetDictionary()
         {
             return _doorAccess;
         }
-        public void AddBadge(badge badges)
+        public bool AddNewBadge(badge badges)
         {
+            int startingCount = _doorAccess.Count;
             _doorAccess.Add(badges.BadgeID, badges.DoorAccess);
+            bool success = startingCount < _doorAccess.Count;
+            return success;
         }
-        public void GiveAccess(int badgeid,string doorAccess)
+        public bool RemoveBadge(int id)
         {
-            List<string> doors = _doorAccess[badgeid];
-            doors.Add(doorAccess);
+            int startingCount = _doorAccess.Count;
+            _doorAccess.Remove(id);
+            bool success = startingCount > _doorAccess.Count();
+            return success;
+
 
         }
-        public void RemoveAccess(int badgeid, string doorAccess)
+        public bool RemoveAccess(int id, string door)
         {
-            List<string> doors = _doorAccess[badgeid];
-            doors.Remove(doorAccess);
+            int startingCount = _doorAccess.Count;
+            _doorAccess.Remove(id);
+            bool success = startingCount > _doorAccess.Count();
+            return success;
 
         }
+    }
         
             
         
-    }
+    
    
 }

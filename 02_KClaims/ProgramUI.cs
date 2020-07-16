@@ -13,6 +13,7 @@ using Claim = _02_Claims.Claim;
 
 namespace _02_KClaims
 {
+    // could not figure out how to get the correct date time to show up
     public class ProgramUI
     {
 
@@ -64,23 +65,30 @@ namespace _02_KClaims
                 }
             }
         }
-        
+
         public void ShowNextClaim()
         {
-            var nextClaim = _repo.ShowNextClaim();
-            Console.WriteLine("here is the next claim for you to take a peek at \n" +
-                $"ClaimID:{nextClaim.ClaimID}\n" +
-                $"Type:{nextClaim.TypeofClaim}/n" +
-                $"Amount:{nextClaim.ClaimAmount}\n" +
-                $"description:{nextClaim.Description}\n" +
-                $"date of incident:{nextClaim.DateOfIncident}\n" +
-                $"date filed:{nextClaim.DateOfClaim}\n" +
-                "do you want to deal with the claim right now (yes or No)(please select y or n)");
-            var userInput = Console.ReadLine();
+
+            Console.WriteLine("here is the next claim for you to take a peek at \n");
+            Queue<Claim> newList = _repo.ShowAllClaims();
+            Claim nextClaim = newList.Peek();
+
+            Console.WriteLine($"ClaimID:{nextClaim.ClaimID}\n" +
+             $"Type:{nextClaim.TypeofClaim}/n" +
+             $"Amount:{nextClaim.ClaimAmount}\n" +
+             $"description:{nextClaim.Description}\n" +
+             $"date of incident:{nextClaim.DateOfIncident}\n" +
+             $"date filed:{nextClaim.DateOfClaim} \n" +
+             $"do you want to take care of this claim (y/n)");
+
+
+
+
+            string userInput = Console.ReadLine();
             switch (userInput)
             {
                 case "y":
-                    _repo.RemoveItem();
+                    newList.Dequeue();
                     break;
                 case "n":
 

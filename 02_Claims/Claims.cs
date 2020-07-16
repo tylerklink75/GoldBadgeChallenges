@@ -16,18 +16,8 @@ namespace _02_Claims
         public double ClaimAmount { get; set; }
         public DateTime DateOfIncident { get; set; }
         public DateTime DateOfClaim { get; set; }
-        public bool IsValid
-        {
-            get
-            {
-                TimeSpan validOpportunity = DateOfClaim - DateOfIncident;
-                if(validOpportunity.Days < 30)
-                {
-                    return true;
-                }
-                return false;
-            }
-        }
+        
+        
         public Claim() { }
         public Claim(int claimID, ClaimType typeOfClaim, string description, double claimAmount, DateTime dateOfIncident, DateTime dateOfClaim)
         {

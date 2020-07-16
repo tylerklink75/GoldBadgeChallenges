@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -54,7 +55,34 @@ namespace _03_Badges
         public void AddBadge()
         {
             Console.Clear();
+            Console.WriteLine("please enter the badge that you would like to add");
+            int number = int.Parse(Console.ReadLine());
+            List<string> newDoor = new List<string>();
+            Console.WriteLine("enter the door you would like to give this badge access to");
+            newDoor.Add(Console.ReadLine());
+            Console.WriteLine("are there any other doors?");
+            newDoor.Add(Console.ReadLine());
+
         }
+        public void SeeAllBadges()
+        {
+            Console.Clear();
+            
+
+
+        }
+        public void EditBadge()
+        {
+            Console.WriteLine("please enter the badge ID that you wish to update");
+            int id = int.Parse(Console.ReadLine());
+            Console.WriteLine("What doors would you like to add");
+            string input = Console.ReadLine();
+            Console.WriteLine("any other doors you would like to add");
+            string userInput = Console.ReadLine();
+
+        }
+        
+            
 
 
         public void SeedContent()
@@ -62,9 +90,7 @@ namespace _03_Badges
             badge badgeOne = new badge(79, new List<string> { "door7" });
             badge badgeTwo = new badge(54, new List<string> { "door 3", "door 6" });
             badge badgeThree = new badge(756, new List<string> { "door 8", "door17" });
-            _repo.AddBadge(badgeOne);
-            _repo.AddBadge(badgeTwo);
-            _repo.AddBadge(badgeThree);
+            
 
         }
     }
